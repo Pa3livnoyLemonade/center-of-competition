@@ -1,0 +1,89 @@
+/*<====== Базовые атомарные элементы ======>*/
+
+.b-NavLink {
+    @include Navigation;
+    padding-bottom: 10px;
+    width: fit-content;
+    position: relative;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+    transition-property: color;
+    &::after{
+        content: '';
+        position: absolute;
+        display: none;
+        background-color: $Primary_Green_500;
+        height: 3px;
+        width: 100%;
+        bottom: 0;
+    }
+}
+
+.b-NavMore {
+    display: none;
+}
+
+.b-NavBurger {
+    position: relative;
+    width: fit-content;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    padding-left: 8px;
+    padding-right: 8px;
+    z-index: 2;
+    &::after{
+        position: absolute;
+        content: "";
+        display: block;
+        height: 100%;
+        width: 100%;
+        transform: scale(0);
+        background-color:$Monochrome_Gray_150;
+        top: 0;
+        left: 0;
+        border-radius: 100px;
+        z-index: -1;
+
+        transition-property: transform;
+        transition-duration: 0.2s;
+        transition-timing-function: ease-in-out;
+    }
+
+    &_Box{
+        width: 20px;
+        height: 14px;
+        position: relative;
+    }
+    
+    &_Line {
+        position: absolute;
+    
+        width: 20px;
+        height: 2px;
+    
+        border-radius: 4px;
+        
+        background-color: rgb(87, 56, 56);
+    
+        transform-origin: left;
+    
+        transition-timing-function: ease-in-out;
+        transition-duration: .2s;
+        transition-property: width, top, left, transform;
+    
+        top: 0;
+        left: 0;
+    
+        &:nth-child(2){
+            top: 6px;
+        }
+        &:nth-child(3){
+            top: 12px;
+        }
+    }
+}
+
+section {
+    height: 200px;
+    background-color:$Primary_Green_600;
+}

@@ -1,0 +1,25 @@
+//Effects
+//Elevations
+@mixin Elevation-2dp {
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2), 0px 3px 4px rgba(0, 0, 0, 0.12), 0px 2px 4px rgba(0, 0, 0, 0.14);
+}
+
+@mixin Elevation-4dp {
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.14), 0px 4px 5px rgba(0, 0, 0, 0.12), 0px 1px 10px rgba(0, 0, 0, 0.2);
+}
+
+@mixin Elevation-6dp {
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.14), 0px 1px 18px rgba(0, 0, 0, 0.12), 0px 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+//Focus Effects
+@mixin Focus_Blue {
+  box-shadow: 0px 0px 6px #0089d6;
+}
+@mixin Focus_Green {
+  box-shadow: 0px 0px 6px #46ad51;
+}
+@mixin Focus_Red {
+  box-shadow: 0px 0px 6px #ea4f50;
+}
+
