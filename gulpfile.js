@@ -14,7 +14,7 @@ var sourcemaps = require('gulp-sourcemaps'); //Соурсмапы
 var rename = require("gulp-rename"); //Переименовывание
 var concat = require('gulp-concat'); //Объединение кода
 var notify = require('gulp-notify'); //Оповещения
-var { parallel, series } = require('gulp');
+var { series } = require('gulp');
 
 function startwatch() {
     browserSync.init({
@@ -82,8 +82,16 @@ function scripts() {
         .pipe(concat('scripts.js'))
         .pipe(babel({
             presets: ['@babel/env']
-        }))
+        }))        
+        .on('error', function (err) {
+            console.log(err.toString());
 
+            notify.onError({
+                message: err.toString(),
+                title: "Js Error!"
+            })(err);
+            this.emit('end');
+        })
         .pipe(gulp.dest('./app/js'))
         .pipe(browserSync.stream());
 }
@@ -103,7 +111,6 @@ function exportCss() {
             html: ['./app/**/*.html']
         }))
         .pipe(csso({
-            restructure: false,
             comments: false
         }))
         .pipe(rename({ suffix: '.min' }))
@@ -113,7 +120,7 @@ function exportCss() {
 }
 
 function exportJs() {
-    return gulp.src('./app/js/**/*.js')
+    return gulp.src('./app/js/*.js')
         .pipe(sourcemaps.init())
 
         .pipe(jsmin())
@@ -131,5 +138,5 @@ function exportImages() {
         .pipe(gulp.dest('./dist/src/'));
 }
 
-exports.start = parallel(startwatch, style, HTMLejs, scripts);
+exports.start = startwatch;
 exports.export = series(exportHTML, exportCss, exportJs, exportImages);

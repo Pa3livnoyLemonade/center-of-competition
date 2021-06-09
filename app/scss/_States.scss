@@ -1,18 +1,25 @@
 /*<====== Состояния ======>*/
 
-/*<====== b-NavLink ======>*/
-.b-NavLink.--Hover:hover {
+.b-NavLink.--Hover:hover, .b-NavMore.--Hover:hover {
     color: $Primary_Green_500;
 }
+
 .b-NavLink.--ActivePage::after {
     display: block;
 }
+
+.b-NavMore.--Active {
+    color: $Primary_Green_500;
+}
+
+
 
 .b-NavBurger.--Hover:hover {
     &::after {
         transform: scale(1);
     }
 }
+
 .b-NavBurger.--Active {
     .b-NavBurger_Line {
         &:nth-child(1) {
@@ -31,6 +38,7 @@
     }
 }
 
+
 .c-Navigation {
     &_svg-Logo.--Visible {
         margin-left: 7px;
@@ -43,17 +51,26 @@
     right: 0;
 }
 
+.c-SecondNavigation.--Open {
+    max-height: 185px;
+}
+
 .m-Header {
     &_Overview.--Visible {
         opacity: 40%;
+        visibility: visible;
     }
 }
 
+.c-HeaderLogo.--Click:active{
+    transform: translateY(1px);
+}
+
 .m-Header.--Fixed {
-    margin-top: -96px;
     position: fixed;
     @include Elevation-4dp;
-    .c-NavBar {
+
+    .c-SecondNavigation {
         @include Elevation-4dp;
     }
 }

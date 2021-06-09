@@ -4627,6 +4627,17 @@ html
 }
 
 /*<====== Базовые элементы ======>*/
+::-moz-selection
+{
+    color: #fff;
+    background-color: #2e7f3c;
+}
+::selection
+{
+    color: #fff;
+    background-color: #2e7f3c;
+}
+
 html,
 body,
 div,
@@ -4729,10 +4740,9 @@ hr
 
 a
 {
-    color: inherit; 
+    text-decoration: none;
 
-    -webkit-text-decoration-line: none;
-            text-decoration-line: none;
+    color: inherit;
 }
 
 article,
@@ -4753,10 +4763,10 @@ section
 body
 {
     font-family: 'Roboto', sans-serif;
-    font-size: 12px;
+    font-size: 16px;
     font-weight: normal;
     font-style: normal;
-    line-height: 19px;
+    line-height: 24px;
 
     overflow-x: hidden;
 }
@@ -4798,24 +4808,23 @@ button
 }
 
 /*<====== Базовые атомарные элементы ======>*/
-.b-NavLink
+.b-NavLink,
+.b-NavMore
 {
     font-size: 16px;
     line-height: 19px;
 
     position: relative;
 
-    width: -webkit-fit-content;
-    width:    -moz-fit-content;
-    width:         fit-content;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
 
     transition-timing-function: ease-in-out;
     transition-duration: .2s;
     transition-property: color; 
     text-transform: uppercase;
 }
-.b-NavLink::after
+.b-NavLink::after,
+.b-NavMore::after
 {
     position: absolute;
     bottom: 0; 
@@ -4832,7 +4841,7 @@ button
 
 .b-NavMore
 {
-    display: none;
+    cursor: pointer;
 }
 
 .b-NavBurger
@@ -4840,9 +4849,6 @@ button
     position: relative;
     z-index: 2; 
 
-    width: -webkit-fit-content;
-    width:    -moz-fit-content;
-    width:         fit-content;
     padding-top: 11px;
     padding-right: 8px;
     padding-bottom: 11px;
@@ -4861,9 +4867,9 @@ button
     height: 100%;
 
     content: '';
-    transition-timing-function: ease-in-out; 
+    transition-timing-function: ease-in-out;
     transition-duration: .2s;
-    transition-property: transform;
+    transition-property: width, top, left, transform; 
     transform: scale(0);
 
     border-radius: 100px;
@@ -4882,7 +4888,7 @@ button
     top: 0;
     left: 0; 
 
-    width: 20px;
+    width: inherit;
     height: 2px;
 
     transition-timing-function: ease-in-out;
@@ -4891,7 +4897,7 @@ button
     transform-origin: left;
 
     border-radius: 4px;
-    background-color: #573838;
+    background-color: #000;
 }
 .b-NavBurger_Line:nth-child(2)
 {
@@ -4912,29 +4918,26 @@ section
 /*<====== Комбинации ======>*/
 .c-HeaderLogo
 {
-    width: -webkit-fit-content;
-    width:    -moz-fit-content;
-    width:         fit-content; 
-    padding-top: 16px;
-    padding-bottom: 16px;
+    padding-top: 52px;
+    padding-bottom: 52px;
 }
 .c-HeaderLogo_svg-Logo
 {
-    width: 52px; 
+    width: 80px; 
 
     vertical-align: middle;
 }
 .c-HeaderLogo_Text
 {
-    font-size: 12px;
-    line-height: 16px;
+    font-size: 22px;
+    line-height: 30px; 
 
-    position: relative; 
+    position: relative;
 
     display: inline-block;
 
-    width: 235px;
-    margin-left: 18px;
+    width: 752px;
+    margin-left: 40px;
 
     vertical-align: middle;
 }
@@ -4942,16 +4945,16 @@ section
 {
     position: absolute;
     top: 0; 
-    left: -13px;
+    left: -30px;
 
     display: block;
 
+    width: 2px;
     height: 100%;
 
     content: '';
 
-    border-right: 1px solid #46ad51;
-    border-left-width: 0;
+    background-color: #46ad51;
 }
 
 .c-Navigation
@@ -4965,7 +4968,6 @@ section
     bottom: 0; 
 
     display: block;
-    float: right;
 
     width: 100%;
     height: 7px;
@@ -4995,15 +4997,8 @@ section
 
 .c-NavBar
 {
-    position: absolute;
+    position: relative;
     z-index: 1;
-    top: 48px;
-    right: -200px;
-
-    overflow-y: scroll;
-
-    width: auto;
-    height: calc(100vh - 36px);
 
     transition-timing-function: ease-in-out; 
     transition-duration: .4s;
@@ -5020,15 +5015,20 @@ section
 }
 .c-NavBar_Links
 {
-    margin-top: 32px;
-    margin-right: 30px;
-    margin-bottom: 32px; 
-    margin-left: 30px;
+    margin-top: 15px;
 }
 .c-NavBar .b-NavLink
 {
-    margin-bottom: 22px; 
-    margin-left: auto;
+    display: inline-block;
+}
+.c-NavBar .b-NavLink:first-child
+{
+    margin-left: 0;
+}
+.c-NavBar .b-NavMore,
+.c-NavBar .b-NavLink
+{
+    margin-left: 28px;
 }
 
 .c-SecondNavigation
@@ -5036,24 +5036,16 @@ section
     position: absolute;
     right: -33px;
 
-    display: none;
+    overflow-y: hidden;
 
-    padding-top: 7px;
+    max-height: 0;
+    padding-right: 33px;
+    padding-left: 33px;
 
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, .14), 0 4px 5px rgba(0, 0, 0, .12), 0 1px 10px rgba(0, 0, 0, .2);
-}
-.c-SecondNavigation:after
-{
-    position: absolute;
-    top: -15px; 
-
-    display: block;
-
-    width: 100%;
-    height: 20px;
-
-    content: '';
+    transition-timing-function: ease-in-out; 
+    transition-duration: .4s;
+    transition-property: max-height;
+    transform-origin: top;
 
     background-color: #fff;
 }
@@ -5061,11 +5053,13 @@ section
 {
     display: none;
 
-    margin-right: 33px;
     margin-bottom: 14px; 
-    margin-left: 33px;
-
-    text-align: right;
+    margin-left: auto;
+}
+.c-SecondNavigation .b-NavLink:first-child
+{
+    margin-top: 7px;
+    margin-left: auto;
 }
 .c-SecondNavigation .b-NavLink:last-child
 {
@@ -5085,13 +5079,15 @@ section
     position: absolute;
     z-index: 0;
 
+    visibility: hidden;
+
     width: 100%;
     height: 100vh;
 
     content: '';
     transition-timing-function: ease-in-out; 
     transition-duration: .4s;
-    transition-property: opacity;
+    transition-property: opacity, visibility;
 
     opacity: 0;
     background-color: #000;
@@ -5106,8 +5102,8 @@ section
 /*<====== Страницы ======>*/
 /*<====== Интеграции ======>*/
 /*<====== Состояния ======>*/
-/*<====== b-NavLink ======>*/
-.b-NavLink.--Hover:hover
+.b-NavLink.--Hover:hover,
+.b-NavMore.--Hover:hover
 {
     color: #46ad51;
 }
@@ -5115,6 +5111,11 @@ section
 .b-NavLink.--ActivePage::after
 {
     display: block;
+}
+
+.b-NavMore.--Active
+{
+    color: #46ad51;
 }
 
 .b-NavBurger.--Hover:hover::after
@@ -5155,66 +5156,193 @@ section
     right: 0;
 }
 
+.c-SecondNavigation.--Open
+{
+    max-height: 185px;
+}
+
 .m-Header_Overview.--Visible
 {
+    visibility: visible; 
+
     opacity: 40%;
+}
+
+.c-HeaderLogo.--Click:active
+{
+    transform: translateY(1px);
 }
 
 .m-Header.--Fixed
 {
     position: fixed;
 
-    margin-top: -96px;
-
     box-shadow: 0 2px 4px rgba(0, 0, 0, .14), 0 4px 5px rgba(0, 0, 0, .12), 0 1px 10px rgba(0, 0, 0, .2);
 }
-.m-Header.--Fixed .c-NavBar
+.m-Header.--Fixed .c-SecondNavigation
 {
     box-shadow: 0 2px 4px rgba(0, 0, 0, .14), 0 4px 5px rgba(0, 0, 0, .12), 0 1px 10px rgba(0, 0, 0, .2);
 }
 
 /*<====== Медиа запросы ======>*/
-/*<====== XL ======>*/
-@media only screen and (max-width: 1200px)
-{
-    .test
-    {
-        margin: 1px;
-    }
-}
-
 /*<====== LG ======>*/
-@media only screen and (max-width: 992px)
+@media only screen and (max-width: 1199px)
 {
-    .test
+    .c-HeaderLogo
     {
-        margin: 1px;
+        padding-top: 47px;
+        padding-bottom: 47px;
+    }
+    .c-HeaderLogo_svg-Logo
+    {
+        width: 90px;
+    }
+    .c-HeaderLogo_Text
+    {
+        width: 592px;
     }
 }
 
 /*<====== MD ======>*/
-@media only screen and (max-width: 768px)
+@media only screen and (max-width: 991px)
 {
-    .test
+    .b-NavLink:nth-child(9)
     {
-        margin: 1px;
+        display: none;
+    }
+    .c-HeaderLogo
+    {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    .c-SecondNavigation .b-NavLink:nth-child(4)
+    {
+        display: table;
+    }
+}
+
+@media only screen and (max-width: 924px)
+{
+    .b-NavLink:nth-child(8)
+    {
+        display: none;
+    }
+    .c-SecondNavigation .b-NavLink:nth-child(3)
+    {
+        display: table;
+    }
+}
+
+@media only screen and (max-width: 815px)
+{
+    .b-NavLink:nth-child(7)
+    {
+        display: none;
+    }
+    .c-SecondNavigation .b-NavLink:nth-child(2)
+    {
+        display: table;
     }
 }
 
 /*<====== SM ======>*/
-@media only screen and (max-width: 576px)
+@media only screen and (max-width: 767px)
 {
-    .test
+    .c-HeaderLogo
     {
-        margin: 1px;
+        padding-top: 52px;
+        padding-bottom: 52px;
+    }
+    .c-HeaderLogo_svg-Logo
+    {
+        width: 70px;
+    }
+    .c-HeaderLogo_Text
+    {
+        font-size: 16px;
+        line-height: 23px;
+
+        width: 432px;
+        margin-left: 30px;
+    }
+    .c-HeaderLogo_Text::after
+    {
+        left: -20px;
+    }
+}
+
+@media only screen and (max-width: 695px)
+{
+    .b-NavLink:nth-child(6)
+    {
+        display: none;
+    }
+    .c-SecondNavigation .b-NavLink:nth-child(1)
+    {
+        display: table;
     }
 }
 
 /*<====== XS ======>*/
-@media only screen and (max-width: 360px)
+@media only screen and (max-width: 575px)
 {
-    .test
+    .b-NavLink
     {
-        margin: 1px;
+        padding-bottom: 10px;
+    }
+    .c-HeaderLogo
+    {
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+    .c-HeaderLogo_svg-Logo
+    {
+        width: 52px;
+    }
+    .c-HeaderLogo_Text
+    {
+        font-size: 12px;
+        line-height: 16px;
+
+        width: 236px;
+        margin-left: 18px;
+    }
+    .c-HeaderLogo_Text::after
+    {
+        left: -12px; 
+
+        width: 1px;
+    }
+    .c-NavBar
+    {
+        position: absolute;
+        top: 48px; 
+        right: -200px;
+
+        overflow-y: scroll;
+
+        height: calc(100vh - 36px);
+    }
+    .c-NavBar_Links
+    {
+        margin-top: 32px;
+        margin-right: 30px;
+        margin-bottom: 32px; 
+        margin-left: 30px;
+    }
+    .c-NavBar .b-NavLink
+    {
+        display: table;
+
+        margin-bottom: 22px; 
+        margin-left: auto;
+    }
+    .c-NavBar .b-NavLink:first-child
+    {
+        margin-left: auto;
+    }
+    .m-Header.--Fixed .c-NavBar
+    {
+        box-shadow: 0 2px 4px rgba(0, 0, 0, .14), 0 4px 5px rgba(0, 0, 0, .12), 0 1px 10px rgba(0, 0, 0, .2);
     }
 }

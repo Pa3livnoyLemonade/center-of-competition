@@ -1,36 +1,139 @@
 /*<====== Медиа запросы ======>*/
-
-/*<====== XL ======>*/
-@media only screen and (max-width: 1200px) {
-    .test {
-        margin: 1px;
-    }
-}
-
 /*<====== LG ======>*/
-@media only screen and (max-width: 992px) {
-    .test {
-        margin: 1px;
+@media only screen and (max-width: 1199px) {
+    .c-HeaderLogo {
+        padding-top: 47px;
+        padding-bottom: 47px;
+        
+        &_svg-Logo {
+            width: 90px;
+        }
+        &_Text {
+            width: 592px;
+        }
     }
 }
 
 /*<====== MD ======>*/
-@media only screen and (max-width: 768px) {
-    .test {
-        margin: 1px;
+@media only screen and (max-width: 991px) {
+    .b-NavLink:nth-child(9) {
+        display: none;
+    }
+    .c-HeaderLogo {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .c-SecondNavigation {
+        .b-NavLink:nth-child(4) {
+            display: table;
+        }
+    }
+}
+
+@media only screen and (max-width: 924px) {
+    .b-NavLink:nth-child(8) {
+        display: none;
+    }
+    .c-SecondNavigation {
+        .b-NavLink:nth-child(3) {
+            display: table;
+        }
+    }
+}
+
+@media only screen and (max-width: 815px) {
+    .b-NavLink:nth-child(7) {
+        display: none;
+    }
+    .c-SecondNavigation {
+        .b-NavLink:nth-child(2) {
+            display: table;
+        }
     }
 }
 
 /*<====== SM ======>*/
-@media only screen and (max-width: 576px) {
-    .test {
-        margin: 1px;
+@media only screen and (max-width: 767px) {
+    .c-HeaderLogo {
+        padding-top: 52px;
+        padding-bottom: 52px;
+        
+        &_svg-Logo {
+            width: 70px;
+        }
+        &_Text {
+            @include Logo_2;
+            width: 432px;
+            margin-left: 30px;
+            &::after {
+                left: -20px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 695px) {
+    .b-NavLink:nth-child(6) {
+        display: none;
+    }
+    .c-SecondNavigation {
+        .b-NavLink:nth-child(1) {
+            display: table;
+        }
     }
 }
 
 /*<====== XS ======>*/
-@media only screen and (max-width: 360px) {
-    .test {
-        margin: 1px;
+@media only screen and (max-width: 575px) {
+    .b-NavLink {
+        padding-bottom: 10px;
+    }
+
+    .c-HeaderLogo {
+        padding-top: 16px;
+        padding-bottom: 16px;
+        
+        &_svg-Logo {
+            width: 52px;
+        }
+        &_Text {
+            @include Logo_3;
+            width: 236px;
+            margin-left: 18px;
+            &::after {
+                width: 1px;
+                left: -12px;
+            }
+        }
+    }
+
+    .c-NavBar {
+        position: absolute;
+        overflow-y: scroll;
+        height: calc(100vh - 36px);
+        right: -200px;
+        top: 48px;
+    
+        &_Links {
+            margin-top: 32px;
+            margin-left: 30px;
+            margin-right: 30px;
+            margin-bottom: 32px;
+        }
+        .b-NavLink {
+            &:first-child{
+                margin-left: auto;
+            }
+            display: table;
+            margin-left: auto;
+            margin-bottom: 22px;
+        }
+    }
+
+    .m-Header.--Fixed {
+        .c-NavBar {
+            @include Elevation-4dp;
+        }
     }
 }

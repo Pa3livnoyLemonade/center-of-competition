@@ -12,7 +12,7 @@
 
 <body class="body">
     <header class="m-Header container-fluid">
-        <div class="c-HeaderLogo row no-gutters mx-auto">
+        <div class="c-HeaderLogo --Click row justify-content-center">
             <a href="index.html">
                 <img class="c-HeaderLogo_svg-Logo" src="../src/logos/svg-CenoterCompLogo/Green_600.svg" alt="">
                 <div class="c-HeaderLogo_Text">Центр компетенций повышения производительности труда, конкурентоспособности и цифровизации производства Кубанского ГАУ</div>
@@ -20,15 +20,15 @@
         </div>
         <hr>
         <div class="c-Navigation row no-gutters">
-            <img class="c-Navigation_svg-Logo" src="../src/logos/svg-CenoterCompLogo/Green_600.svg" alt="">
-            <button class="b-NavBurger --Hover" type="button">
+            <img class="c-Navigation_svg-Logo d-sm-none d-block" src="../src/logos/svg-CenoterCompLogo/Green_600.svg" alt="">
+            <button class="b-NavBurger --Hover d-sm-none d-block" type="button">
                 <div class="b-NavBurger_Box">
                     <div class="b-NavBurger_Line"></div>
                     <div class="b-NavBurger_Line"></div>
                     <div class="b-NavBurger_Line"></div>
                 </div>
             </button>
-            <nav class="c-NavBar">
+            <nav class="c-NavBar m-auto">
                 <ul class="c-NavBar_Links">
                     <li class="b-NavLink --ActivePage --Hover">
                         <a href="index.html">Главная</a>
@@ -57,13 +57,10 @@
                     <li class="b-NavLink --Hover">
                         <a href="contacts.html">Контакты</a>
                     </li>
-                    <li class="b-NavLink b-NavMore ">
+                    <li class="b-NavMore --Hover d-none d-lg-none d-sm-inline-block">
                         Ещё
                     </li>
-                    <ul class="c-SecondNavigation">
-                        <li class="b-NavLink --Hover">
-                            <a href="news.html">Новости</a>
-                        </li>
+                    <ul class="c-SecondNavigation d-none d-lg-none d-sm-block">
                         <li class="b-NavLink --Hover">
                             <a href="announces.html">Объявления</a>
                         </li>
@@ -80,7 +77,7 @@
                 </ul>
             </nav>
         </div>
-        <div class="m-Header_Overview"></div>
+        <div class="m-Header_Overview d-sm-none d-block"></div>
     </header>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
