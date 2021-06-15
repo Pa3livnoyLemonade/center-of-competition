@@ -8,7 +8,7 @@ node_modules/
 .vscode/
 
 # Игнорирование CSS
-/css
+app/css
 
 # Игнорирование HTML
-/pages
+app/pages
