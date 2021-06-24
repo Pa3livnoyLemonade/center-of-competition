@@ -2,9 +2,14 @@
 
 .m-Header {
     background-color: #fff;
-
+    
     padding-left: 0;
     padding-right: 0;
+
+    hr {
+        height: 1px;
+        background-color: $Primary_Green_600;
+    }
     
     &_Overview{
         position: absolute;
@@ -17,11 +22,11 @@
         visibility: hidden;
 
         transition-property: opacity, visibility;
-        transition-duration: 0.4s;
-        transition-timing-function: ease-in-out;
+        transition: .4s ease-in-out;
     }
-    hr {
-        height: 1px;
-        background-color: $Primary_Green_600;
+
+    .c-HeaderLogo {
+        padding-top: 52px;
+        padding-bottom: 52px;
     }
 }

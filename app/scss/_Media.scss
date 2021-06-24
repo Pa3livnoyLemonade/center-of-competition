@@ -1,27 +1,36 @@
 /*<====== Медиа запросы ======>*/
+
 /*<====== LG ======>*/
 @media only screen and (max-width: 1199px) {
+
+    /*<====== Комбинации ======>*/
     .c-HeaderLogo {
-        padding-top: 47px;
-        padding-bottom: 47px;
-        
-        &_svg-Logo {
-            width: 90px;
+        &_ic-Logo {
+            width: 88px;
         }
+
         &_Text {
-            width: 592px;
+            width: 584px;
+        }
+    }
+
+    /*<====== Модули ======>*/
+    .m-Header {
+        .c-HeaderLogo {
+            padding-top: 48px;
+            padding-bottom: 48px;
         }
     }
 }
 
 /*<====== MD ======>*/
 @media only screen and (max-width: 991px) {
-    .b-NavLink:nth-child(9) {
-        display: none;
-    }
-    .c-HeaderLogo {
-        padding-top: 40px;
-        padding-bottom: 40px;
+
+    /*<====== Комбинации ======>*/
+    .c-NavBar {
+        .b-NavLink:nth-child(9) {
+            display: none;
+        }
     }
 
     .c-SecondNavigation {
@@ -32,9 +41,14 @@
 }
 
 @media only screen and (max-width: 924px) {
-    .b-NavLink:nth-child(8) {
-        display: none;
+
+    /*<====== Комбинации ======>*/
+    .c-NavBar {
+        .b-NavLink:nth-child(8) {
+            display: none;
+        }
     }
+
     .c-SecondNavigation {
         .b-NavLink:nth-child(3) {
             display: table;
@@ -43,9 +57,14 @@
 }
 
 @media only screen and (max-width: 815px) {
-    .b-NavLink:nth-child(7) {
-        display: none;
+
+    /*<====== Комбинации ======>*/
+    .c-NavBar {
+        .b-NavLink:nth-child(7) {
+            display: none;
+        }
     }
+
     .c-SecondNavigation {
         .b-NavLink:nth-child(2) {
             display: table;
@@ -55,28 +74,42 @@
 
 /*<====== SM ======>*/
 @media only screen and (max-width: 767px) {
+
+    /*<====== Комбинации ======>*/
     .c-HeaderLogo {
-        padding-top: 52px;
-        padding-bottom: 52px;
-        
-        &_svg-Logo {
-            width: 70px;
+        &_ic-Logo {
+            width: 72px;
         }
+
         &_Text {
             @include Logo_2;
-            width: 432px;
-            margin-left: 30px;
+            width: 426px;
+            margin-left: 28px;
+
             &::after {
                 left: -20px;
             }
         }
     }
+
+    /*<====== Модули ======>*/
+    .m-Header {
+        .c-HeaderLogo {
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+    }
 }
 
 @media only screen and (max-width: 695px) {
-    .b-NavLink:nth-child(6) {
-        display: none;
+
+    /*<====== Комбинации ======>*/
+    .c-NavBar {
+        .b-NavLink:nth-child(6) {
+            display: none;
+        }
     }
+
     .c-SecondNavigation {
         .b-NavLink:nth-child(1) {
             display: table;
@@ -84,23 +117,26 @@
     }
 }
 
+
 /*<====== XS ======>*/
 @media only screen and (max-width: 575px) {
+
+    /*<====== Базовые элементы ======>*/
     .b-NavLink {
         padding-bottom: 10px;
     }
 
+    /*<====== Комбинации ======>*/
     .c-HeaderLogo {
-        padding-top: 16px;
-        padding-bottom: 16px;
-        
-        &_svg-Logo {
-            width: 52px;
+        &_ic-Logo {
+            width: 64px;
         }
+
         &_Text {
             @include Logo_3;
-            width: 236px;
-            margin-left: 18px;
+            width: 252px;
+            margin-left: 12px;
+
             &::after {
                 width: 1px;
                 left: -12px;
@@ -111,23 +147,28 @@
     .c-NavBar {
         position: absolute;
         overflow-y: scroll;
-        height: calc(100vh - 36px);
+        height: calc(100vh - 36px); //Высота .c-Navigation без паддингов
         right: -200px;
-        top: 48px;
-    
+        top: 48px; //Высота .c-Navigation с паддингами
         &_Links {
-            margin-top: 32px;
-            margin-left: 30px;
-            margin-right: 30px;
-            margin-bottom: 32px;
+            margin: 32px;
         }
         .b-NavLink {
-            &:first-child{
-                margin-left: auto;
-            }
-            display: table;
-            margin-left: auto;
+            display: table !important;
+            margin-left: auto !important;
             margin-bottom: 22px;
+        }
+    }
+
+    .c-Navigation {
+        padding: 6px 8px;
+    }
+
+    /*<====== Модули ======>*/
+    .m-Header {
+        .c-HeaderLogo {
+            padding-top: 24px;
+            padding-bottom: 24px;
         }
     }
 

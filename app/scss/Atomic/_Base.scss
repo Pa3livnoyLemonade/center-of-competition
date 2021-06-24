@@ -1,15 +1,13 @@
-/*<====== Базовые атомарные элементы ======>*/
+/*<====== Базовые элементы ======>*/
 
 .b-NavLink,
 .b-NavMore {
     @include Navigation;
 
-    padding-bottom: 15px;
+    padding-bottom: 14px;
     position: relative;
 
-    transition-duration: 0.2s;
-    transition-timing-function: ease-in-out;
-    transition-property: color;
+    transition: color 0.2s ease-in-out;
 
     &::after {
         position: absolute;
@@ -28,10 +26,8 @@
 
 .b-NavBurger {
     position: relative;
-    padding-top: 11px;
-    padding-bottom: 11px;
-    padding-left: 8px;
-    padding-right: 8px;
+    width: 36px;
+    height: 36px;
     z-index: 2;
 
     &::after {
@@ -41,20 +37,20 @@
         height: 100%;
         width: 100%;
         transform: scale(0);
-        background-color: $Monochrome_Gray_150;
+        background-color: $Monochrome_Gray_200;
         top: 0;
         left: 0;
         border-radius: 100px;
         z-index: -1;
 
-        transition-timing-function: ease-in-out;
-        transition-duration: .2s;
         transition-property: width, top, left, transform;
+        transition: .2s ease-in-out;
     }
 
     &_Box {
         width: 20px;
         height: 14px;
+        margin: 0 auto;
         position: relative;
     }
 
@@ -69,9 +65,8 @@
 
         transform-origin: left;
 
-        transition-timing-function: ease-in-out;
-        transition-duration: .2s;
         transition-property: width, top, left, transform;
+        transition: .2s ease-in-out;
 
         top: 0;
         left: 0;

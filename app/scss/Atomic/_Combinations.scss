@@ -1,22 +1,19 @@
 /*<====== Комбинации ======>*/
 
 .c-HeaderLogo {
-    padding-top: 52px;
-    padding-bottom: 52px;
-
-    &_svg-Logo {
+    &_ic-Logo {
         vertical-align: middle;
         width: 80px;
     }
-
     &_Text {
         position: relative;
         display: inline-block;
         vertical-align: middle;
-        width: 752px;
-        margin-left: 40px;
-        @include Logo_1;
+        width: 770px;
+        margin-left: 38px;
 
+        @include Logo_1;
+        
         &::after {
             content: "";
             position: absolute;
@@ -30,38 +27,6 @@
     }
 }
 
-.c-Navigation {
-    position: relative;
-
-    &::after {
-        content: "";
-        position: absolute;
-        display: block;
-        background-color: #ffffff;
-        z-index: 1;
-        height: 7px;
-        width: 100%;
-        bottom: 0;
-    }
-
-    &_svg-Logo {
-        opacity: 0%;
-        margin-left: 4px;
-        width: 34px;
-
-        transition-duration: 0.2s;
-        transition-timing-function: ease-in-out;
-        transition-property: opacity, margin-left;
-    }
-
-    .b-NavBurger {
-        margin-left: auto;
-        margin-right: 7px;
-        margin-top: 6px;
-        margin-bottom: 6px;
-    }
-}
-
 .c-NavBar {
     position: relative;
 
@@ -70,17 +35,9 @@
 
     scrollbar-width: none;
     -ms-overflow-style: none;
-    &::-webkit-scrollbar {
-        display: none;
-    }
+    &::-webkit-scrollbar {display: none;}
 
-    transition-property: right;
-    transition-duration: 0.4s;
-    transition-timing-function: ease-in-out;
-
-    &_Links {
-        margin-top: 15px;
-    }
+    transition: right .4s ease-in-out;
 
     .b-NavLink {
         display: inline-block;
@@ -96,19 +53,17 @@
 
 .c-SecondNavigation {
     position: absolute;
-    right: -33px;
+    right: -32px;
     background-color: #fff;
-    padding-right: 33px;
-    padding-left: 33px;
+    padding-right: 32px;
+    padding-left: 32px;
 
     transform-origin: top;
     max-height: 0;
 
     overflow-y: hidden;
 
-    transition-property: max-height;
-    transition-duration: 0.4s;
-    transition-timing-function: ease-in-out;
+    transition: max-height .4s ease-in-out;
 
     .b-NavLink {
         display: none;
@@ -117,12 +72,42 @@
         margin-bottom: 14px;
 
         &:first-child {
-            margin-top: 7px;
+            margin-top: 8px;
             margin-left: auto;
         }
 
         &:last-child {
             margin-bottom: 0;
         }
+    }
+}
+
+.c-Navigation {
+    position: relative;
+
+    padding-top: 14px;
+
+    &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        background-color: #ffffff;
+        z-index: 1;
+        height: 8px;
+        width: 100%;
+        bottom: 0;
+    }
+
+    &_ic-Logo {
+        opacity: 0%;
+        margin-left: -4px;
+        width: 34px;
+
+        transition-property: opacity, margin-left;
+        transition: .2s ease-in-out;
+    }
+
+    .b-NavBurger {
+        margin-left: auto;
     }
 }

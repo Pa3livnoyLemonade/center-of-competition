@@ -3,7 +3,23 @@
 /*========== Header ==========*/
 $(document).ready(function () {
   ScrollEvent(HeaderDiff());
-});
+}); //Побочная навигация - .c-SecondNavigation
+
+var NavMore = $('.b-NavMore');
+var SecondNav = $('.c-SecondNavigation');
+var SecNavOpen = false;
+NavMore.click(function () {
+  if (SecNavOpen) {
+    NavMore.removeClass('--Active');
+    SecondNav.removeClass('--Open');
+    SecNavOpen = false;
+  } else {
+    NavMore.addClass('--Active');
+    SecondNav.addClass('--Open');
+    SecNavOpen = true;
+  }
+}); //Мобильная навигация
+
 var NavBurger = $('.b-NavBurger');
 var NavBar = $('.c-NavBar');
 var Header_Overview = $('.m-Header_Overview');
@@ -26,7 +42,8 @@ Header_Overview.click(function () {
   NavBar.removeClass('--Open');
   Header_Overview.removeClass('--Visible');
   NavOpen = false;
-});
+}); //Расчет высоты хедера при адаптации
+
 $(window).resize(function () {
   ScrollEvent(HeaderDiff());
 });
@@ -36,11 +53,12 @@ $(window).scroll(function () {
 var Header = $('.m-Header');
 var MainElem = $('main');
 var Navigaion = $('.c-Navigation');
-var NavLogo = $('.c-Navigation_svg-Logo');
+var NavLogo = $('.c-Navigation_ic-Logo'); //Функция расчета высоты
 
 function HeaderDiff() {
-  return Header.height() - Navigaion.height();
-}
+  return Header.outerHeight(true) - Navigaion.outerHeight(true);
+} //Закрепление хедера при скроллинге
+
 
 function ScrollEvent(difference) {
   if (document.documentElement.scrollTop > difference) {
@@ -53,18 +71,3 @@ function ScrollEvent(difference) {
     MainElem.removeAttr('style');
   }
 }
-
-var NavMore = $('.b-NavMore');
-var SecondNav = $('.c-SecondNavigation');
-var SecNavOpen = false;
-NavMore.click(function () {
-  if (SecNavOpen) {
-    NavMore.removeClass('--Active');
-    SecondNav.removeClass('--Open');
-    SecNavOpen = false;
-  } else {
-    NavMore.addClass('--Active');
-    SecondNav.addClass('--Open');
-    SecNavOpen = true;
-  }
-});

@@ -2,19 +2,15 @@
 //Family
 @mixin Roboto {
   font-family: 'Roboto', sans-serif;
-  font-style: normal;
-  font-weight: normal;
 }
 @mixin Roboto_Slab {
   font-family: 'Roboto Slab', serif;
-  font-style: normal;
-  font-weight: 300;
+  font-weight: 200;
 }
 
 
 @mixin Navigation {
   text-transform: uppercase;
-  font-size: 16px;
   line-height: 19px;
 }
 
@@ -29,7 +25,7 @@
 }
 @mixin Logo_2 {
   font-size: 16px; 
-  line-height: 23px;
+  line-height: 24px;
 }
 @mixin Logo_3 {
   font-size: 12px; 
@@ -38,12 +34,10 @@
 
 
 @mixin Error_1 {
-  font-weight: 200;
   font-size: 262px;
   line-height: 307px;
 }
 @mixin Error_2 {
-  font-weight: 200;
   font-size: 160px;
   line-height: 187px;
 }
@@ -55,12 +49,12 @@
   line-height: 55px;
 }
 @mixin H2 {
-  font-size: 35px;
-  line-height: 46px;
+  font-size: 34px;
+  line-height: 45px;
 }
 @mixin H3 {
-  font-size: 29px;
-  line-height: 38px;
+  font-size: 28px;
+  line-height: 37px;
 }
 @mixin H4 {
   font-size: 20px;
@@ -70,33 +64,27 @@
 
 @mixin Subtitle_1 {
   font-size: 24px;
+  line-height: 36px;
   font-weight: 500;
-  line-height: 33px;
 }
 @mixin Subtitle_2 {
   font-size: 22px;
+  line-height: 28px;
   font-weight: 500;
-  line-height: 30px;
 }
 @mixin Subtitle_3 {
-  font-size: 22px;
+  font-size: 18px;
+  line-height: 24px;
   font-weight: 500;
-  line-height: 27px;
 }
 @mixin Subtitle_4 {
-  font-size: 18px;
+  line-height: 20px;
   font-weight: 500;
-  line-height: 22px;
 }
 @mixin Subtitle_5 {
-  font-size: 16px; 
-  font-weight: 500;
-  line-height: 20px;
-}
-@mixin Subtitle_6 {
   font-size: 14px;
+  line-height: 20px;
   font-weight: 500;
-  line-height: 18px;
 }
 
 
@@ -106,7 +94,10 @@
 }
 @mixin Body_2 {
   font-size: 12px;
-  line-height: 19px;
+  line-height: 20px;
+}
+@mixin Bold {
+  font-weight: bold;
 }
 
 
@@ -115,12 +106,12 @@
   line-height: 49px;
 }
 @mixin Text_2 {
-  font-size: 29px;
-  line-height: 34px;
+  font-size: 28px;
+  line-height: 33px;
 }
 @mixin Text_3 {
   font-size: 22px;
-  line-height: 26px;
+  line-height: 32px;
 }
 @mixin Text_4 {
   font-size: 18px;
@@ -133,13 +124,13 @@
 
 @mixin Text_Light_1 {
   font-size: 14px;
-  font-weight: 300;
   line-height: 20px;
+  font-weight: 300;
 }
 @mixin Text_Light_2 {
   font-size: 12px;
+  line-height: 20px;
   font-weight: 300;
-  line-height: 19px;
 }
 
 
@@ -153,7 +144,7 @@
 }
 @mixin Link_3 {
   font-size: 14px;
-  line-height: 16px;
+  line-height: 20px;
 }
 @mixin Link_4 {
   font-size: 12px;
